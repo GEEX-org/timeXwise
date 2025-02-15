@@ -6,8 +6,7 @@ import { FeaturesGrid } from '@/components/sections/FeatureGrid'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
-import { ReviewMarquee } from "@/components/ReviewMarquee"
-import { Video } from "@/components/Video"
+import { ReviewMarquee } from '@/components/ReviewMarquee'
 
 export default function Page() {
   const { data: session } = useSession()
@@ -41,7 +40,7 @@ export default function Page() {
     <div className="container mx-auto px-4 py-8 sm:py-16 bg-[#EFE9D5]">
       <HeroSection
         title="Welcome to"
-        highlightedText="Mind Mentor"
+        highlightedText="timeXwise"
         description="Your AI-powered study assistant for accelerated learning"
         ctaText={session ? "Go to Dashboard" : "Get Started"}
         ctaLink={session ? "/home" : "/register"}
@@ -51,9 +50,8 @@ export default function Page() {
 
       <section className="py-12 sm:py-20">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">
-          See Mind Mentor in Action
+          See timeXwise in Action
         </h2>
-        <Video />
       </section>
 
       <section className="py-12 sm:py-20">

@@ -17,22 +17,25 @@ export default function SignInPage() {
   }, [session, router])
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-6 sm:py-12 bg-[#EFE9D5] px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-md">
-        <h2 className="mt-4 sm:mt-6 text-center text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
-          Welcome to timeXwise
+    <div className="flex flex-col items-center justify-center min-h-screen py-12 sm:py-16 bg-[#EFE9D5] px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-lg text-center">
+        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+          Welcome to <span className="text-[#7fb236]">timeXwise</span>
         </h2>
-        <p className="mt-2 text-center text-xs sm:text-sm text-gray-600">
+        <p className="mt-4 text-lg sm:text-xl text-gray-600">
           Let&apos;s get started with your study journey
         </p>
       </div>
 
-      <div className="mt-6 sm:mt-8 w-full max-w-md">
-        <div className="bg-white px-4 sm:px-10 py-6 sm:py-8 shadow rounded-lg sm:rounded-lg border-2 border-black">
+      <div className="mt-10 sm:mt-12 w-full max-w-lg">
+        <div className="bg-white px-8 sm:px-12 py-10 sm:py-12 shadow-xl rounded-2xl border-2 border-gray-100">
           <SignInForm />
-           <p className="mt-4 text-center text-xs sm:text-sm text-gray-600">
+          <p className="mt-6 text-center text-sm sm:text-base text-gray-600">
             Don&apos;t have an account?{' '}
-            <Link href="/register" className="text-[#7fb236] hover:underline">
+            <Link
+              href="/register"
+              className="font-semibold text-[#7fb236] hover:text-[#6a9a2d] hover:underline transition-colors"
+            >
               Sign up
             </Link>
           </p>
@@ -40,4 +43,4 @@ export default function SignInPage() {
       </div>
     </div>
   )
-} 
+}

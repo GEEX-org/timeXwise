@@ -101,12 +101,14 @@ export default function StudyPlanPage() {
   const currentPlans = storedPlans.slice(startIndex, endIndex);
 
   return (
-    <div className="p-4 sm:p-6 md:p-8">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-0">Study Plan Generator</h1>
-        <div className="flex items-center gap-4">
-          <span className="text-xs sm:text-sm text-gray-600">Create and manage your study plans</span>
-        </div>
+    <div className="p-6 sm:p-8 md:p-10 bg-[#EFE9D5] min-h-screen">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-10">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-0">
+          Study Plan Generator
+        </h1>
+        <span className="text-sm sm:text-base text-gray-600">
+          Create and manage your study plans
+        </span>
       </div>
       
       <div className="w-full max-w-full sm:max-w-10xl">
@@ -114,18 +116,20 @@ export default function StudyPlanPage() {
       </div>
 
       {/* Stored Plans Section */}
-      <div id="stored-plans" className="mt-8 sm:mt-12">
-        <Separator className="my-6 sm:my-8" />
-        <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Your Study Plans</h2>
+      <div id="stored-plans" className="mt-10 sm:mt-12">
+        <Separator className="my-8 sm:my-10" />
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-900">
+          Your Study Plans
+        </h2>
         
         {loading ? (
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-6 sm:space-y-8">
             <Skeleton className="h-[150px] sm:h-[200px] w-full" />
             <Skeleton className="h-[150px] sm:h-[200px] w-full" />
           </div>
         ) : storedPlans.length > 0 ? (
           <>
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-6 sm:space-y-8">
               {currentPlans.map((plan) => (
                 <StoredPlan
                   key={plan._id}
@@ -143,7 +147,7 @@ export default function StudyPlanPage() {
             )}
           </>
         ) : (
-          <div className="text-center py-8 text-gray-500">
+          <div className="text-center py-10 text-gray-600">
             <p>You haven&apos;t created any study plans yet.</p>
             <p className="mt-2">Use the form above to create your first study plan!</p>
           </div>

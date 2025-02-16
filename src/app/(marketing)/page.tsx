@@ -44,10 +44,11 @@ export default function Page() {
         highlightedText="timeXwise"
         description="Your AI-powered study assistant for accelerated learning"
         ctaText={session ? "Go to Dashboard" : "Get Started"}
-        ctaLink={session ? "/home" : "/register"}
+        ctaLink={session ? "/home" : "/register"} 
       />
 
       <Spline
+        className='mt-12'
         scene="https://prod.spline.design/cFqwf14S42Cuz36j/scene.splinecode" 
       />
       

@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
-import { Loader2} from "lucide-react"
+import { Loader2 } from "lucide-react"
 
 export default function ProfilePage() {
   const { data: session } = useSession()
@@ -61,30 +61,33 @@ export default function ProfilePage() {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
-
           {isEditing ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="text-sm font-medium">Name</label>
+                <label className="text-sm font-medium text-gray-700">Name</label>
                 <Input
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="mt-1"
+                  className="mt-2 bg-white border-gray-300 focus:border-[#7fb236] focus:ring-[#7fb236]"
                   name="name"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium">Email</label>
+                <label className="text-sm font-medium text-gray-700">Email</label>
                 <Input
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="mt-1"
+                  className="mt-2 bg-white border-gray-300 focus:border-[#7fb236] focus:ring-[#7fb236]"
                   name="email"
                   disabled
                 />
               </div>
-              <div className="flex gap-2">
-                <Button type="submit" disabled={loading}>
+              <div className="flex gap-4">
+                <Button
+                  type="submit"
+                  disabled={loading}
+                  className="bg-[#7fb236] hover:bg-[#6a9a2d] text-white"
+                >
                   {loading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -98,16 +101,22 @@ export default function ProfilePage() {
                   type="button"
                   variant="outline"
                   onClick={() => setIsEditing(false)}
+                  className="border-gray-300 text-gray-700 hover:bg-gray-50"
                 >
                   Cancel
                 </Button>
               </div>
             </form>
           ) : (
-            <Button onClick={() => setIsEditing(true)}>Edit Profile</Button>
+            <Button
+              onClick={() => setIsEditing(true)}
+              className="bg-[#7fb236] hover:bg-[#6a9a2d] text-white"
+            >
+              Edit Profile
+            </Button>
           )}
         </CardContent>
       </Card>
     </div>
   )
-} 
+}

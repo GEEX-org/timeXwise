@@ -7,6 +7,7 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 import { ReviewMarquee } from '@/components/ReviewMarquee'
+import Spline from '@splinetool/react-spline/next';
 
 export default function Page() {
   const { data: session } = useSession()
@@ -45,14 +46,13 @@ export default function Page() {
         ctaText={session ? "Go to Dashboard" : "Get Started"}
         ctaLink={session ? "/home" : "/register"}
       />
+
+      <Spline
+        scene="https://prod.spline.design/cFqwf14S42Cuz36j/scene.splinecode" 
+      />
       
       <FeaturesGrid features={features} />
 
-      <section className="py-12 sm:py-20">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">
-          See timeXwise in Action
-        </h2>
-      </section>
 
       <section className="py-12 sm:py-20">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">
